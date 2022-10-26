@@ -3,15 +3,20 @@ import os
 from strategy.sort_strategy import SortStrategy
 from algorithms.quick_sort import QuickSort
 from algorithms.merge_sort import MergeSort
+from algorithms.bubble_sort import BubbleSort
 
 strategy_selected = None
 array_selected = []
 
 def display_choices():
+    global strategy_selected
+    global array_selected
+    
     print("Select Sorting Algorithm")
     print("------------------------------------")
     print("[1] Quick Sort")
     print("[2] Merge Sort")
+    print("[3] Bubble Sort")
     print("\n")
 
     strategy_selected = int(input("Select Sorting: "))
@@ -35,6 +40,9 @@ def main():
     elif strategy_selected == 2:
         title = "Merge Sort"
         sort = SortStrategy(MergeSort)
+    elif strategy_selected == 3:
+        title = "Bubble Sort"
+        sort = SortStrategy(BubbleSort)
     else:
         title = "Quick Sort"
         sort = SortStrategy(QuickSort)
